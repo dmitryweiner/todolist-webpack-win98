@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Заголовок</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/98.css"
+    >
+</head>
+<body>
+<div class="wrapper">
+    <div class="window" style="width: 300px">
+        <div class="title-bar">
+            <div class="title-bar-text">Список дел</div>
+        </div>
+        <div class="window-body">
+            <form id="form">
+                <input id="inputString" type="text" placeholder="Введите дело" />
+                <button type="submit" id="button">Сохранить</button>
+            </form>
+            <div id="filter">
+                <a href="#" id="all" class="selected">ВСЕ</a>
+                <a href="#" id="done">СДЕЛАНЫЕ</a>
+                <a href="#" id="not-done">НЕ СДЕЛАНЫЕ</a>
+            </div>
+            <ul id="list"></ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

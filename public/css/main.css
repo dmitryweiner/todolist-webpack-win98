@@ -1,0 +1,77 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Pixelated MS Sans Serif",Arial;
+    -webkit-font-smoothing: none;
+    font-size: 11px;
+}
+
+body {
+    background: #c0c0c0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    width: 20%;
+    height: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#form * {
+    margin-top: 10px;
+}
+
+#filter {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#filter a.selected {
+    font-weight: bold;
+}
+
+ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    marker: none;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    margin-top: 10px;
+}
+
+ul li .li-wrapper {
+    text-align: left;
+    flex: 1;
+    overflow: auto;
+    word-wrap: break-word;
+}
+
+
+ul li button {
+    min-width: 20px;
+}
+
+.checked {
+    text-decoration: line-through;
+}
