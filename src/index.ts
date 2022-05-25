@@ -1,17 +1,21 @@
 import {add, FILTER_VALUES, getItems, remove, setFilter, update} from "./store";
 
 document.addEventListener("DOMContentLoaded", () => {
-    const input = document.getElementById("inputString");
+    const input = document.getElementById("inputString") as HTMLInputElement;
     const form = document.getElementById("form");
-    form.addEventListener("submit", event => {
+    form?.addEventListener("submit", event => {
         event.preventDefault();
-        add(input.value);
+        if (input?.value.trim() === "") {
+            return;
+        }
+
+        add(input?.value);
         input.value = "";
         render();
     });
 
     function render() {
-        const list = document.getElementById("list");
+        const list = document.getElementById("list") as HTMLElement;
         let result = "";
 
         for(let item of getItems()) {
@@ -28,12 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         for(let item of getItems()) {
             const button = document.getElementById(item.id);
-            button.addEventListener("click", () => {
+            button?.addEventListener("click", () => {
                 remove(item.id);
                 render();
             })
             const checkbox = document.getElementById(`${item.id}-checkbox`);
-            checkbox.addEventListener("click", () => {
+            checkbox?.addEventListener("click", () => {
                 update(item.id);
                 render();
             })
@@ -41,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     render();
 
-    const all = document.getElementById("all");
+    const all = document.getElementById("all") as HTMLElement;
     all.addEventListener("click", e => {
         e.preventDefault();
         for(const link of document.querySelectorAll("#filter a")) {
@@ -52,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
         render();
     });
 
-    const done = document.getElementById("done");
+    const done = document.getElementById("done") as HTMLElement;
     done.addEventListener("click", e => {
         e.preventDefault();
         for(const link of document.querySelectorAll("#filter a")) {
@@ -63,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         render();
     });
 
-    const notDone = document.getElementById("not-done");
+    const notDone = document.getElementById("not-done") as HTMLElement;
     notDone.addEventListener("click", e => {
         e.preventDefault();
         for(const link of document.querySelectorAll("#filter a")) {
